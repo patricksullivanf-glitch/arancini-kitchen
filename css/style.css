@@ -62,6 +62,12 @@ img { max-width: 100%; display: block; }
   display: block;
 }
 
+@media (min-width: 721px) {
+  .brand-logo {
+    height: 48px;
+  }
+}
+
 /* Header */
 .site-header {
   position: sticky;
@@ -190,8 +196,10 @@ img { max-width: 100%; display: block; }
 
 /* Notice bar */
 .notice {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--paper);
+  color: var(--ink-soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .notice .container {
@@ -201,7 +209,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.9rem;
 }
 
-.notice strong { color: var(--gold-soft); }
+.notice strong { color: var(--gold); }
 
 /* Menu */
 .menu-grid {
@@ -377,8 +385,9 @@ fieldset {
 
 /* Footer */
 .site-footer {
-  background: var(--ink);
-  color: var(--cream);
+  background: var(--paper);
+  color: var(--ink-soft);
+  border-top: 1px solid var(--line);
   padding: 64px 0 24px;
 }
 
@@ -392,9 +401,6 @@ fieldset {
 
 .footer-logo-card {
   display: inline-block;
-  background: var(--paper);
-  padding: 14px 20px;
-  border-radius: var(--radius);
   margin-bottom: 16px;
 }
 
@@ -404,8 +410,8 @@ fieldset {
   display: block;
 }
 
-.footer-brand p { margin: 6px 0; color: var(--gold-soft); font-size: 0.92rem; }
-.footer-brand p a:hover { color: var(--cream); }
+.footer-brand p { margin: 6px 0; color: var(--ink-soft); font-size: 0.92rem; }
+.footer-brand p a:hover { color: var(--gold); }
 
 .footer-social {
   text-align: center;
@@ -414,15 +420,16 @@ fieldset {
 .footer-social img {
   margin: 0 auto 10px;
   border-radius: var(--radius);
+  border: 1px solid var(--line);
 }
 
 .footer-social a {
   font-size: 0.85rem;
   letter-spacing: 0.06em;
-  color: var(--gold-soft);
+  color: var(--ink-soft);
 }
 
-.footer-social a:hover { color: var(--cream); }
+.footer-social a:hover { color: var(--gold); }
 
 .footer-copy {
   text-align: center;
