@@ -133,9 +133,13 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-leaf {
-  width: 130px;
+  width: 150px;
   margin: 0 auto 18px;
-  color: var(--gold);
+}
+
+.hero-leaf img {
+  width: 100%;
+  height: auto;
 }
 
 .hero .eyebrow { text-align: center; }
