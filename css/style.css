@@ -62,9 +62,14 @@ img { max-width: 100%; display: block; }
   display: block;
 }
 
+.brand-logo-desktop { display: none; }
+
 @media (min-width: 721px) {
-  .brand-logo {
-    height: 48px;
+  .brand-logo-mobile { display: none; }
+
+  .brand-logo-desktop {
+    display: block;
+    height: 40px;
   }
 }
 
