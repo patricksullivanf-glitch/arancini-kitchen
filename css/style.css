@@ -154,7 +154,7 @@ img { max-width: 100%; display: block; }
   font-weight: 300;
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   letter-spacing: 0.01em;
-  margin: 0 0 20px;
+  margin: 0 0 36px;
 }
 
 .hero h1 .script {
@@ -162,13 +162,6 @@ img { max-width: 100%; display: block; }
   font-weight: 400;
   font-size: 1.25em;
   color: var(--gold);
-}
-
-.hero-sub {
-  color: var(--ink-soft);
-  max-width: 520px;
-  margin: 0 auto 34px;
-  font-size: 1.02rem;
 }
 
 .hero-actions {
