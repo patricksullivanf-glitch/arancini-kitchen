@@ -52,7 +52,7 @@
         </div>
       </div>
       <div class="hero-photo">
-        <img src="assets/img/food/hero-cross-section.jpg" alt="Three arancini cut in half showing the buffalo chicken, ham and cheese, and traditional beef and pea fillings, served with a glass of white wine">
+        <img src="assets/img/food/hero-ingredients.jpg" alt="A bowl of arancini with parmesan, cherry tomatoes, marinara, and olive oil">
       </div>
     </div>
   </section>
@@ -70,7 +70,9 @@
 
       <div class="menu-grid">
         <article class="menu-item">
-          <img class="menu-item-photo" src="assets/img/food/menu-buffalo-chicken.jpg" alt="Cross-section of a buffalo chicken arancini">
+          <button type="button" class="menu-item-photo-btn" data-full="assets/img/food/full-buffalo-chicken.jpg" aria-label="View larger photo of Buffalo Chicken">
+            <img class="menu-item-photo" src="assets/img/food/menu-buffalo-chicken.jpg" alt="Cross-section of a buffalo chicken arancini">
+          </button>
           <div class="menu-item-body">
             <div class="menu-item-top">
               <h3>Buffalo Chicken</h3>
@@ -81,7 +83,9 @@
         </article>
 
         <article class="menu-item">
-          <img class="menu-item-photo" src="assets/img/food/menu-traditional.jpg" alt="Cross-section of a traditional arancini filled with ground beef and peas">
+          <button type="button" class="menu-item-photo-btn" data-full="assets/img/food/full-traditional.jpg" aria-label="View larger photo of Traditional">
+            <img class="menu-item-photo" src="assets/img/food/menu-traditional.jpg" alt="Cross-section of a traditional arancini filled with ground beef and peas">
+          </button>
           <div class="menu-item-body">
             <div class="menu-item-top">
               <h3>Traditional</h3>
@@ -92,7 +96,9 @@
         </article>
 
         <article class="menu-item">
-          <img class="menu-item-photo" src="assets/img/food/menu-ham-cheese.jpg" alt="Cross-section of a ham and cheese arancini">
+          <button type="button" class="menu-item-photo-btn" data-full="assets/img/food/full-ham-cheese.jpg" aria-label="View larger photo of Ham & Cheese">
+            <img class="menu-item-photo" src="assets/img/food/menu-ham-cheese.jpg" alt="Cross-section of a ham and cheese arancini">
+          </button>
           <div class="menu-item-body">
             <div class="menu-item-top">
               <h3>Ham &amp; Cheese</h3>
@@ -103,7 +109,9 @@
         </article>
 
         <article class="menu-item">
-          <img class="menu-item-photo" src="assets/img/food/menu-sweet-cini.jpg" alt="A pile of White Chocolate Sweet Cini arancini next to a bar of white chocolate">
+          <button type="button" class="menu-item-photo-btn" data-full="assets/img/food/full-sweet-cini.jpg" aria-label="View larger photo of White Chocolate Sweet Cini">
+            <img class="menu-item-photo" src="assets/img/food/menu-sweet-cini.jpg" alt="A pile of White Chocolate Sweet Cini arancini next to a bar of white chocolate">
+          </button>
           <div class="menu-item-body">
             <div class="menu-item-top">
               <h3>White Chocolate Sweet Cini</h3>
@@ -122,7 +130,7 @@
   </section>
 
   <section class="photo-band">
-    <img src="assets/img/food/order-lifestyle.jpg" alt="A bowl of arancini served with marinara sauce and a glass of white wine">
+    <img src="assets/img/food/photo-band.jpg" alt="Three arancini halves showing the traditional beef and pea, ham and cheese, and buffalo chicken fillings">
   </section>
 
   <section id="about" class="about section">
@@ -240,6 +248,11 @@
   </div>
   <p class="footer-copy">&copy; <span id="year"></span> The Arancini Kitchen. All rights reserved.</p>
 </footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close photo">&times;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+</div>
 
 <script src="js/main.js"></script>
 </body>
