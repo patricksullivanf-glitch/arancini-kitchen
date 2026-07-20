@@ -26,11 +26,14 @@ function mailtoFallback(f) {
     ['White Chocolate Sweet Cini ($4)', f.qtySweetCini.value],
   ].filter(([, qty]) => Number(qty) > 0);
 
+  const fulfillment = f.fulfillment.value || '—';
+
   const lines = [
     `Name: ${f.name.value}`,
     `Phone: ${f.phone.value}`,
     `Email: ${f.email.value}`,
     `Date needed: ${f.needBy.value}`,
+    `Pickup or Delivery: ${fulfillment}`,
     '',
     'Items:',
     ...(items.length ? items.map(([label, qty]) => `  ${qty} x ${label}`) : ['  (none selected)']),

@@ -30,6 +30,7 @@
     <nav class="site-nav" id="siteNav">
       <a href="#menu">Menu</a>
       <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
       <a href="#order">Order</a>
       <a href="#contact">Find Us</a>
     </nav>
@@ -46,6 +47,7 @@
         </div>
         <p class="eyebrow">Handmade &amp; Cooked to Order</p>
         <h1><span class="script">Fresh</span> Arancini,<br>Made in Small Batches</h1>
+        <p class="hero-sub">Crafted by hand from start to finish, every arancini is rolled and fried fresh for your order. Catering available throughout Massachusetts.</p>
         <div class="hero-actions">
           <a href="#menu" class="btn btn-primary">View the Menu</a>
           <a href="#order" class="btn btn-outline">Place an Order</a>
@@ -54,12 +56,6 @@
       <div class="hero-photo">
         <img src="assets/img/food/hero-ingredients.jpg" alt="A bowl of arancini with parmesan, cherry tomatoes, marinara, and olive oil">
       </div>
-    </div>
-  </section>
-
-  <section class="notice">
-    <div class="container">
-      <p><strong>Please note:</strong> we cook everything fresh to order — most orders need at least <strong>half a day's notice</strong>, more for larger catering orders. We do not offer immediate pickup.</p>
     </div>
   </section>
 
@@ -148,6 +144,22 @@
     </div>
   </section>
 
+  <section id="gallery" class="gallery section">
+    <div class="container">
+      <p class="eyebrow center">Gallery</p>
+      <h2 class="section-title center">A Closer Look</h2>
+    </div>
+    <div class="gallery-scroll">
+      <img src="assets/img/gallery/photo-1.jpg" alt="Bowl of arancini with parmesan, tomatoes, and marinara">
+      <img src="assets/img/gallery/photo-2.jpg" alt="Three arancini halves with a glass of white wine">
+      <img src="assets/img/gallery/photo-3.jpg" alt="Three arancini halves showing the beef and pea, ham, and buffalo chicken fillings">
+      <img src="assets/img/gallery/photo-4.jpg" alt="A plated arancini with marinara next to a bowl of arancini and a glass of wine">
+      <img src="assets/img/gallery/photo-5.jpg" alt="A bowl of arancini">
+      <img src="assets/img/gallery/photo-6.jpg" alt="A pile of arancini on a wood board">
+      <img src="assets/img/gallery/photo-7.jpg" alt="White Chocolate Sweet Cini arancini next to a bar of white chocolate">
+    </div>
+  </section>
+
   <section id="order" class="order section">
     <div class="container">
       <p class="eyebrow center">Order</p>
@@ -205,8 +217,20 @@
           </div>
         </fieldset>
 
+        <fieldset class="form-row fulfillment">
+          <legend>Pickup or Delivery</legend>
+          <label class="fulfillment-option">
+            <input type="radio" name="fulfillment" value="Pickup" required>
+            Pickup
+          </label>
+          <label class="fulfillment-option">
+            <input type="radio" name="fulfillment" value="Delivery">
+            Delivery
+          </label>
+        </fieldset>
+
         <div class="form-row">
-          <label for="notes">Notes (delivery vs. pickup, allergies, etc.)</label>
+          <label for="notes">Notes (Additional details, allergies, etc.)</label>
           <textarea id="notes" name="notes" rows="4"></textarea>
         </div>
 

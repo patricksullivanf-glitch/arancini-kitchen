@@ -157,7 +157,13 @@ img { max-width: 100%; display: block; }
   font-weight: 300;
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   letter-spacing: 0.01em;
-  margin: 0 0 36px;
+  margin: 0 0 20px;
+}
+
+.hero-sub {
+  color: var(--ink-soft);
+  max-width: 480px;
+  margin: 0 auto 32px;
 }
 
 .hero-content h1 .script {
@@ -196,6 +202,7 @@ img { max-width: 100%; display: block; }
   .hero-content { text-align: left; }
   .hero-content .eyebrow { text-align: left; }
   .hero-leaf { margin: 0 0 18px; }
+  .hero-sub { margin-left: 0; }
   .hero-actions { justify-content: flex-start; }
   .hero-photo { margin-top: 0; }
 }
@@ -224,23 +231,6 @@ img { max-width: 100%; display: block; }
 }
 
 .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-/* Notice bar */
-.notice {
-  background: var(--paper);
-  color: var(--ink-soft);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.notice .container {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.notice strong { color: var(--gold); }
 
 /* Menu */
 .menu-grid {
@@ -324,6 +314,27 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--gold-soft);
 }
 
+/* Gallery */
+.gallery { padding-bottom: 56px; }
+
+.gallery-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 32px 24px 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery-scroll img {
+  flex: 0 0 auto;
+  width: 320px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 3px;
+  scroll-snap-align: start;
+}
+
 /* Order */
 .order { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 
@@ -402,6 +413,30 @@ fieldset {
 .qty-row input {
   width: 72px;
   text-align: center;
+}
+
+.fulfillment {
+  display: flex;
+  gap: 28px;
+}
+
+.fulfillment-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.95rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.fulfillment-option input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--gold);
+  cursor: pointer;
 }
 
 .field-hint {
@@ -500,4 +535,6 @@ fieldset {
   .menu-grid { grid-template-columns: 1fr; }
   .form-row.two-col { grid-template-columns: 1fr; }
   .photo-band { height: 320px; }
+  .gallery-scroll img { width: 240px; height: 300px; }
+  .fulfillment { gap: 20px; }
 }
