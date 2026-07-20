@@ -308,7 +308,7 @@ img { max-width: 100%; display: block; }
 
 /* Photo band */
 .photo-band {
-  max-height: 480px;
+  height: 620px;
   overflow: hidden;
 }
 
@@ -316,6 +316,7 @@ img { max-width: 100%; display: block; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 82%;
   display: block;
 }
 
@@ -530,4 +531,5 @@ fieldset {
 
   .menu-grid { grid-template-columns: 1fr; }
   .form-row.two-col { grid-template-columns: 1fr; }
+  .photo-band { height: 320px; }
 }
