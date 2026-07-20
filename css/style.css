@@ -322,26 +322,15 @@ img { max-width: 100%; display: block; }
 
 /* About */
 .about-inner {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 56px;
-  align-items: center;
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.about-photo {
-  aspect-ratio: 4 / 5;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.about-copy p {
   color: var(--ink-soft);
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-align: left;
 }
-
-.about-copy p { color: var(--ink-soft); }
 
 .ig-link {
   display: inline-block;
@@ -500,11 +489,6 @@ fieldset {
 }
 
 /* Responsive */
-@media (max-width: 820px) {
-  .about-inner { grid-template-columns: 1fr; }
-  .about-photo { max-width: 320px; margin: 0 auto; }
-}
-
 @media (max-width: 720px) {
   .nav-toggle { display: flex; }
 
