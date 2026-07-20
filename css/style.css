@@ -326,14 +326,64 @@ img { max-width: 100%; display: block; }
   -webkit-overflow-scrolling: touch;
 }
 
-.gallery-scroll img {
+.gallery-photo-btn {
   flex: 0 0 auto;
+  scroll-snap-align: start;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.gallery-photo-btn:hover,
+.gallery-photo-btn:focus-visible {
+  opacity: 0.8;
+}
+
+.gallery-photo-btn img {
   width: 320px;
   height: 400px;
   object-fit: cover;
   border-radius: 3px;
-  scroll-snap-align: start;
+  display: block;
 }
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(28, 26, 23, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.lightbox[hidden] { display: none; }
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 3px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: var(--cream);
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.lightbox-close:hover { color: var(--gold-soft); }
 
 /* Order */
 .order { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -428,6 +478,7 @@ fieldset {
   text-transform: none;
   letter-spacing: 0;
   font-size: 0.95rem;
+  line-height: 1;
   color: var(--ink);
   cursor: pointer;
 }
@@ -435,6 +486,8 @@ fieldset {
 .fulfillment-option input {
   width: 16px;
   height: 16px;
+  margin: 0;
+  flex-shrink: 0;
   accent-color: var(--gold);
   cursor: pointer;
 }
@@ -535,6 +588,6 @@ fieldset {
   .menu-grid { grid-template-columns: 1fr; }
   .form-row.two-col { grid-template-columns: 1fr; }
   .photo-band { height: 320px; }
-  .gallery-scroll img { width: 240px; height: 300px; }
+  .gallery-photo-btn img { width: 240px; height: 300px; }
   .fulfillment { gap: 20px; }
 }

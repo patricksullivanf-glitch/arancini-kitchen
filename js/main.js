@@ -16,6 +16,53 @@ siteNav.querySelectorAll('a').forEach((link) => {
 });
 
 
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(src, alt) {
+  lightboxImg.src = src;
+  lightboxImg.alt = alt;
+  lightbox.hidden = false;
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.hidden = true;
+  lightboxImg.src = '';
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.gallery-photo-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const img = btn.querySelector('img');
+    openLightbox(img.src, img.alt);
+  });
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+});
+
+const phoneInput = document.getElementById('phone');
+
+phoneInput.addEventListener('input', () => {
+  const digits = phoneInput.value.replace(/\D/g, '').slice(0, 10);
+  let formatted = digits;
+  if (digits.length > 6) {
+    formatted = `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+  } else if (digits.length > 3) {
+    formatted = `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  } else if (digits.length > 0) {
+    formatted = `(${digits}`;
+  }
+  phoneInput.value = formatted;
+});
+
 const ORDER_EMAIL = 'kenny@arancinikitchen.com';
 
 function mailtoFallback(f) {

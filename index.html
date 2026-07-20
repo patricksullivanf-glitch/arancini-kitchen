@@ -150,13 +150,24 @@
       <h2 class="section-title center">A Closer Look</h2>
     </div>
     <div class="gallery-scroll">
-      <img src="assets/img/gallery/photo-1.jpg" alt="Bowl of arancini with parmesan, tomatoes, and marinara">
-      <img src="assets/img/gallery/photo-2.jpg" alt="Three arancini halves with a glass of white wine">
-      <img src="assets/img/gallery/photo-3.jpg" alt="Three arancini halves showing the beef and pea, ham, and buffalo chicken fillings">
-      <img src="assets/img/gallery/photo-4.jpg" alt="A plated arancini with marinara next to a bowl of arancini and a glass of wine">
-      <img src="assets/img/gallery/photo-5.jpg" alt="A bowl of arancini">
-      <img src="assets/img/gallery/photo-6.jpg" alt="A pile of arancini on a wood board">
-      <img src="assets/img/gallery/photo-7.jpg" alt="White Chocolate Sweet Cini arancini next to a bar of white chocolate">
+      <button type="button" class="gallery-photo-btn" aria-label="View full-size photo 1">
+        <img src="assets/img/gallery/photo-1.jpg" alt="Bowl of arancini with parmesan, tomatoes, and marinara">
+      </button>
+      <button type="button" class="gallery-photo-btn" aria-label="View full-size photo 2">
+        <img src="assets/img/gallery/photo-2.jpg" alt="Three arancini halves with a glass of white wine">
+      </button>
+      <button type="button" class="gallery-photo-btn" aria-label="View full-size photo 4">
+        <img src="assets/img/gallery/photo-4.jpg" alt="A plated arancini with marinara next to a bowl of arancini and a glass of wine">
+      </button>
+      <button type="button" class="gallery-photo-btn" aria-label="View full-size photo 5">
+        <img src="assets/img/gallery/photo-5.jpg" alt="A bowl of arancini">
+      </button>
+      <button type="button" class="gallery-photo-btn" aria-label="View full-size photo 6">
+        <img src="assets/img/gallery/photo-6.jpg" alt="A pile of arancini on a wood board">
+      </button>
+      <button type="button" class="gallery-photo-btn" aria-label="View full-size photo 7">
+        <img src="assets/img/gallery/photo-7.jpg" alt="White Chocolate Sweet Cini arancini next to a bar of white chocolate">
+      </button>
     </div>
   </section>
 
@@ -259,6 +270,11 @@
   </div>
   <p class="footer-copy">&copy; <span id="year"></span> The Arancini Kitchen. All rights reserved.</p>
 </footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close photo">&times;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+</div>
 
 <script src="js/main.js"></script>
 </body>
