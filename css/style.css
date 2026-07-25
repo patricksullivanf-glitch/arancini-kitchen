@@ -467,7 +467,15 @@ fieldset {
 
 .fulfillment {
   display: flex;
-  gap: 28px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fulfillment-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .fulfillment-option {
@@ -481,6 +489,7 @@ fieldset {
   line-height: 1;
   color: var(--ink);
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .fulfillment-option input {
@@ -491,6 +500,34 @@ fieldset {
   accent-color: var(--gold);
   cursor: pointer;
 }
+
+.fulfillment-detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.fulfillment-detail label {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+}
+
+.fulfillment-detail input {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  background: var(--cream);
+  border-radius: var(--radius);
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.fulfillment-detail input[type="time"] { width: 120px; }
+.fulfillment-detail input[type="text"] { width: 220px; }
 
 .field-hint {
   font-size: 0.78rem;
@@ -589,5 +626,6 @@ fieldset {
   .form-row.two-col { grid-template-columns: 1fr; }
   .photo-band { height: 320px; }
   .gallery-photo-btn img { width: 240px; height: 300px; }
-  .fulfillment { gap: 20px; }
+  .fulfillment-row { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .fulfillment-detail input[type="text"] { width: 100%; }
 }

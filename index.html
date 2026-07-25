@@ -230,14 +230,30 @@
 
         <fieldset class="form-row fulfillment">
           <legend>Pickup or Delivery</legend>
-          <label class="fulfillment-option">
-            <input type="radio" name="fulfillment" value="Pickup" required>
-            Pickup
-          </label>
-          <label class="fulfillment-option">
-            <input type="radio" name="fulfillment" value="Delivery">
-            Delivery
-          </label>
+
+          <div class="fulfillment-row">
+            <label class="fulfillment-option">
+              <input type="radio" name="fulfillment" value="Pickup" required>
+              Pickup
+            </label>
+            <div class="fulfillment-detail" id="pickupDetail" hidden>
+              <label for="pickupTime">Time</label>
+              <input type="time" id="pickupTime" name="pickupTime">
+            </div>
+          </div>
+
+          <div class="fulfillment-row">
+            <label class="fulfillment-option">
+              <input type="radio" name="fulfillment" value="Delivery">
+              Delivery
+            </label>
+            <div class="fulfillment-detail" id="deliveryDetail" hidden>
+              <label for="deliveryTime">Time</label>
+              <input type="time" id="deliveryTime" name="deliveryTime">
+              <label for="address">Address</label>
+              <input type="text" id="address" name="address" placeholder="Street, city, zip">
+            </div>
+          </div>
         </fieldset>
 
         <div class="form-row">

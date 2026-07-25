@@ -63,6 +63,21 @@ phoneInput.addEventListener('input', () => {
   phoneInput.value = formatted;
 });
 
+const pickupDetail = document.getElementById('pickupDetail');
+const deliveryDetail = document.getElementById('deliveryDetail');
+const addressInput = document.getElementById('address');
+
+document.querySelectorAll('input[name="fulfillment"]').forEach((radio) => {
+  radio.addEventListener('change', () => {
+    if (!radio.checked) return;
+    const isDelivery = radio.value === 'Delivery';
+    pickupDetail.hidden = isDelivery;
+    deliveryDetail.hidden = !isDelivery;
+    addressInput.required = isDelivery;
+    if (!isDelivery) addressInput.value = '';
+  });
+});
+
 const ORDER_EMAIL = 'kenny@arancinikitchen.com';
 
 function mailtoFallback(f) {
@@ -74,6 +89,9 @@ function mailtoFallback(f) {
   ].filter(([, qty]) => Number(qty) > 0);
 
   const fulfillment = f.fulfillment.value || '—';
+  const fulfillmentDetails = fulfillment === 'Delivery'
+    ? [`Delivery Time: ${f.deliveryTime.value || '—'}`, `Delivery Address: ${f.address.value || '—'}`]
+    : [`Pickup Time: ${f.pickupTime.value || '—'}`];
 
   const lines = [
     `Name: ${f.name.value}`,
@@ -81,6 +99,7 @@ function mailtoFallback(f) {
     `Email: ${f.email.value}`,
     `Date needed: ${f.needBy.value}`,
     `Pickup or Delivery: ${fulfillment}`,
+    ...fulfillmentDetails,
     '',
     'Items:',
     ...(items.length ? items.map(([label, qty]) => `  ${qty} x ${label}`) : ['  (none selected)']),
