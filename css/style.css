@@ -508,6 +508,10 @@ fieldset {
   flex-wrap: wrap;
 }
 
+.fulfillment-detail[hidden] {
+  display: none;
+}
+
 .fulfillment-detail label {
   margin: 0;
   text-transform: uppercase;
@@ -528,6 +532,13 @@ fieldset {
 
 .fulfillment-detail input[type="time"] { width: 120px; }
 .fulfillment-detail input[type="text"] { width: 220px; }
+
+.fulfillment-note {
+  flex-basis: 100%;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-family: var(--serif);
+}
 
 .field-hint {
   font-size: 0.78rem;
@@ -627,5 +638,6 @@ fieldset {
   .photo-band { height: 320px; }
   .gallery-photo-btn img { width: 240px; height: 300px; }
   .fulfillment-row { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .fulfillment-detail { width: 100%; }
   .fulfillment-detail input[type="text"] { width: 100%; }
 }
