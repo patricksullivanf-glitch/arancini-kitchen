@@ -548,6 +548,27 @@ fieldset {
 
 .order-form .btn { align-self: flex-start; }
 
+.order-form .btn[hidden] { display: none; }
+
+.order-form .btn:disabled {
+  background: var(--ink-soft);
+  border-color: var(--ink-soft);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.field-hint.order-success {
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-top: 0;
+  padding: 20px 24px;
+  border: 1px solid var(--gold);
+  border-left-width: 4px;
+  background: var(--paper);
+}
+
 .hp-field {
   position: absolute;
   left: -9999px;

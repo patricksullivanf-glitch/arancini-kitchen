@@ -82,10 +82,10 @@ const ORDER_EMAIL = 'kenny@arancinikitchen.com';
 
 function mailtoFallback(f) {
   const items = [
-    ['Buffalo Chicken ($5)', f.qtyBuffalo.value],
-    ['Traditional ($5)', f.qtyTraditional.value],
-    ['Ham & Cheese ($5)', f.qtyHamCheese.value],
-    ['White Chocolate Sweet Cini ($4)', f.qtySweetCini.value],
+    ['Buffalo Chicken ($8)', f.qtyBuffalo.value],
+    ['Traditional ($8)', f.qtyTraditional.value],
+    ['Ham & Cheese ($8)', f.qtyHamCheese.value],
+    ['White Chocolate Sweet Cini ($6)', f.qtySweetCini.value],
   ].filter(([, qty]) => Number(qty) > 0);
 
   const fulfillment = f.fulfillment.value || '—';
@@ -114,11 +114,17 @@ function mailtoFallback(f) {
 
 const orderForm = document.getElementById('orderForm');
 const orderFormHint = document.getElementById('orderFormHint');
+const orderSubmit = document.getElementById('orderSubmit');
 
 orderForm.addEventListener('submit', (e) => {
   e.preventDefault();
+  if (orderSubmit.disabled) return;
   const f = e.target;
   const data = new URLSearchParams(new FormData(f)).toString();
+
+  // Lock the button immediately so a slow connection can't trigger duplicate orders.
+  orderSubmit.disabled = true;
+  orderSubmit.textContent = 'Sending…';
 
   fetch('/', {
     method: 'POST',
@@ -127,11 +133,15 @@ orderForm.addEventListener('submit', (e) => {
   })
     .then((res) => {
       if (!res.ok) throw new Error(`Netlify Forms responded ${res.status}`);
-      f.hidden = true;
+      orderSubmit.hidden = true;
       orderFormHint.textContent = "Thanks — your order request is in! We'll be in touch shortly.";
+      orderFormHint.classList.add('order-success');
+      orderFormHint.scrollIntoView({ behavior: 'smooth', block: 'center' });
     })
     .catch(() => {
       // Not deployed on Netlify (e.g. local preview) — fall back to opening an email.
+      orderSubmit.disabled = false;
+      orderSubmit.textContent = 'Send Order Request';
       mailtoFallback(f);
     });
 });
